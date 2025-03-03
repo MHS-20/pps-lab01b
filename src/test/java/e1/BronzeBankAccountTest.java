@@ -6,15 +6,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class SilverBankAccountTest {
+public class BronzeBankAccountTest {
 
-    private SilverBankAccount account;
+    private BronzeBankAccount account;
     private BankAccount coreAccount;
 
     @BeforeEach
     void init(){
         coreAccount = new CoreBankAccount();
-        this.account = new SilverBankAccount(coreAccount);
+        this.account = new BronzeBankAccount(coreAccount);
     }
 
     @Test
@@ -29,11 +29,19 @@ public class SilverBankAccountTest {
     }
 
     @Test
-    public void testCanWithdraw() {
+    public void testCanWithdrawWithoutFee() {
+        this.account.deposit(1000);
+        this.account.withdraw(50);
+        assertEquals(950, this.account.getBalance());
+    }
+
+    @Test
+    public void testCanWithdrawWithFee() {
         this.account.deposit(1000);
         this.account.withdraw(200);
         assertEquals(799, this.account.getBalance());
     }
+
 
     @Test
     public void testCannotWithdrawMoreThanAvailable(){
