@@ -9,10 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class BankAccountTest {
 
     private SilverBankAccount account;
+    private CoreBankAccount coreAccount;
 
     @BeforeEach
     void init(){
-        this.account = new SilverBankAccount();
+        coreAccount = new CoreBankAccount();
+        this.account = new SilverBankAccount(coreAccount);
     }
 
     @Test
