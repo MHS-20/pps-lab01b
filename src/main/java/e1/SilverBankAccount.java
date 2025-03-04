@@ -17,7 +17,7 @@ public class SilverBankAccount extends AbstractBankAccount{
     }
 
     public void withdraw(int amount) {
-        if (this.getBalance() < amount){
+        if (this.getBalance() < amount + 1){
             throw new IllegalStateException();
         }
         base.withdraw(amount + 1);

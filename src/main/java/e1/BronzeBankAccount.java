@@ -9,7 +9,7 @@ public class BronzeBankAccount extends AbstractBankAccount{
     }
 
     public void withdraw(int amount) {
-        if (this.getBalance() < amount){
+        if (this.getBalance() < amount + 1){
             throw new IllegalStateException();
         }
 
