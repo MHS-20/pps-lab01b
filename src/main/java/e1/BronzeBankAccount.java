@@ -1,19 +1,11 @@
 package e1;
 
-public class BronzeBankAccount {
+public class BronzeBankAccount extends AbstractBankAccount{
 
     private BankAccount base;
 
     public BronzeBankAccount(BankAccount ba){
-        this.base = ba;
-    }
-
-    public int getBalance() {
-        return base.getBalance();
-    }
-
-    public void deposit(int amount) {
-        base.deposit(amount);
+        super(ba);
     }
 
     public void withdraw(int amount) {

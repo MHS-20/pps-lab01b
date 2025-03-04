@@ -1,11 +1,11 @@
 package e1;
 
-public class SilverBankAccount implements BankAccount{
+public class SilverBankAccount extends AbstractBankAccount{
 
     private BankAccount base;
 
     public SilverBankAccount(BankAccount ba){
-        this.base = ba;
+        super(ba);
     }
 
     public int getBalance() {

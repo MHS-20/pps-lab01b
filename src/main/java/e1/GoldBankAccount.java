@@ -1,19 +1,12 @@
 package e1;
 
-public class GoldBankAccount implements BankAccount {
+public class GoldBankAccount extends AbstractBankAccount {
 
     private BankAccount base;
 
     public GoldBankAccount(BankAccount ba) {
-        this.base = ba;
-    }
-
-    public int getBalance() {
-        return base.getBalance();
-    }
-
-    public void deposit(int amount) {
-        base.deposit(amount);
+       super(ba);
+        // this.base = ba;
     }
 
     public void withdraw(int amount) {
