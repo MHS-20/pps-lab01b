@@ -2,8 +2,6 @@ package e1;
 
 public class BronzeBankAccount extends AbstractBankAccount{
 
-    private BankAccount base;
-
     public BronzeBankAccount(BankAccount ba){
         super(ba);
     }
