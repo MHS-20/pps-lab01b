@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class GoldBankAccountTest extends CoreBankAccountTest {
+public class GoldBankAccountTest extends AbstractBankAccountTest {
 
     private GoldBankAccount account;
 

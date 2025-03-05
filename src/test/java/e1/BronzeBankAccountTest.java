@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class BronzeBankAccountTest extends CoreBankAccountTest{
+public class BronzeBankAccountTest extends AbstractBankAccountTest {
 
     private BronzeBankAccount account;
 
@@ -24,9 +24,8 @@ public class BronzeBankAccountTest extends CoreBankAccountTest{
         assertEquals(799, this.account.getBalance());
 
         // Without Fee
-        this.account.deposit(1000);
         this.account.withdraw(50);
-        assertEquals(950, this.account.getBalance());
+        assertEquals(749, this.account.getBalance());
     }
 
     @Test
