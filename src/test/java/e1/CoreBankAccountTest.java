@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CoreBankAccountTest {
+public abstract class CoreBankAccountTest {
     protected BankAccount coreAccount;
 
     @BeforeEach
@@ -24,4 +24,6 @@ public class CoreBankAccountTest {
         assertEquals(1000, this.coreAccount.getBalance());
     }
 
+    @Test
+    public abstract void testCanWithdraw();
 }
