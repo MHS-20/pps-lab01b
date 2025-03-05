@@ -17,19 +17,17 @@ public class BronzeBankAccountTest extends CoreBankAccountTest{
     }
 
     @Test
-    public void testCanWithdrawWithoutFee() {
+    public void testCanWithdraw() {
+        // With Fee
+        this.account.deposit(1000);
+        this.account.withdraw(200);
+        assertEquals(799, this.account.getBalance());
+
+        // Without Fee
         this.account.deposit(1000);
         this.account.withdraw(50);
         assertEquals(950, this.account.getBalance());
     }
-
-    @Test
-    public void testCanWithdrawWithFee() {
-        this.account.deposit(1000);
-        this.account.withdraw(200);
-        assertEquals(799, this.account.getBalance());
-    }
-
 
     @Test
     public void testCannotWithdrawMoreThanAvailable(){
